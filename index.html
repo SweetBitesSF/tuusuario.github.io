@@ -1,274 +1,294 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G9NH9ZNG89"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-G9NH9ZNG89');
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sweet Bites</title>
+<title>Sweet Bites | Postrería Artesanal</title>
 
 <style>
-body{
-  font-family:'Segoe UI',sans-serif;
-  background:linear-gradient(180deg,#ffeef5,#fff7fb);
-  margin:0;
-  color:#5a2a3b;
-  overflow-x:hidden;
+:root {
+  --primary: #7a1f3d;
+  --accent: #d94b7a;
+  --bg-soft: #fff7fb;
+  --white: #ffffff;
 }
 
-/* DECORACIÓN FONDO SUAVE */
-body::before{
-  content:"🍓";
-  position:fixed;
-  font-size:120px;
-  top:60px;
-  left:40px;
-  opacity:0.06;
-  transform:rotate(-10deg);
-  pointer-events:none;
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-soft);
+  margin: 0;
+  color: #333;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-body::after{
-  content:"🍰";
-  position:fixed;
-  font-size:120px;
-  bottom:60px;
-  right:40px;
-  opacity:0.06;
-  pointer-events:none;
+/* BARRA DE HORARIOS */
+.status-bar {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+/* DECORACIÓN FONDO */
+body::before { content:"🍓"; position:fixed; font-size:100px; top:10%; left:5%; opacity:0.03; pointer-events:none; }
+body::after { content:"🍰"; position:fixed; font-size:100px; bottom:10%; right:5%; opacity:0.03; pointer-events:none; }
 
 /* HERO */
-header{
-  background:url("fondo.jpg") center/cover;
-  padding:90px 20px 70px;
-  text-align:center;
+header {
+  background: linear-gradient(rgba(255, 238, 245, 0.4), rgba(255, 238, 245, 0.4)), url("fondo.jpg") center/cover;
+  padding: 100px 20px;
+  text-align: center;
 }
 
-.hero-box{
-  background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(12px);
-  display:inline-block;
-  padding:30px 45px;
-  border-radius:25px;
-  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+.hero-box {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 40px 60px;
+  border-radius: 40px;
+  display: inline-block;
+  box-shadow: 0 30px 60px rgba(122, 31, 61, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-header img{
-  width:120px;
-  margin-bottom:10px;
-}
-
-h1{
-  margin:0;
-  color:#7a1f3d;
-  font-size:34px;
-}
-
-.sub{
-  font-weight:600;
-  margin-top:5px;
-}
-
-.hero-desc{
-  font-size:14px;
-  opacity:0.8;
-}
+.hero-box img { width: 100px; margin-bottom: 20px; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1)); }
+h1 { margin: 0; color: var(--primary); font-size: 42px; font-weight: 800; letter-spacing: -1px; }
+.sub { font-size: 18px; color: var(--accent); font-weight: 600; margin-top: 5px; }
 
 /* PRODUCTOS */
-.contenedor{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  padding:50px 20px;
-  gap:30px;
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 20px;
+  gap: 35px;
 }
 
-.producto{
-  background:#fff6fb;
-  border-radius:18px;
-  width:260px;
-  padding:15px;
-  text-align:center;
-  box-shadow:0 15px 40px rgba(0,0,0,0.08);
-  transition:0.3s;
+.producto {
+  background: var(--white);
+  border-radius: 30px;
+  width: 280px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.04);
+  transition: all 0.4s ease;
+  border: 1px solid #fef0f5;
 }
 
-.producto:hover{
-  transform:translateY(-10px) scale(1.03);
+.producto:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 50px rgba(217, 75, 122, 0.12);
 }
 
-.producto img{
-  width:100%;
-  border-radius:12px;
+.producto img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 22px;
+  margin-bottom: 20px;
 }
 
-.precio{
-  font-weight:bold;
-  color:#d94b7a;
-  margin:10px 0;
-  font-size:18px;
+.producto h3 { color: var(--primary); font-size: 24px; margin: 10px 0; }
+.producto p { font-size: 14px; color: #666; min-height: 45px; }
+.precio { font-weight: 800; color: var(--accent); font-size: 22px; margin: 20px 0; }
+
+.boton {
+  display: block;
+  padding: 14px;
+  background: var(--accent);
+  color: white;
+  border-radius: 18px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.boton{
-  display:inline-block;
-  padding:10px 18px;
-  background:#ff8fb3;
-  color:white;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.2s;
+.boton:hover { background: var(--primary); }
+
+/* INSTRUCTIVO SOFISTICADO */
+.como-pedir {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-.boton:hover{
-  background:#ff6fa0;
+.como-pedir h2 { color: var(--primary); margin-bottom: 50px; font-size: 32px; }
+
+.pasos-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* COMO PEDIR */
-.como{
-  text-align:center;
-  padding:50px 20px;
-  background:#fff1f7;
+.paso-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 30px;
+  position: relative;
 }
 
-.pasos{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:25px;
-  margin-top:25px;
+.paso-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--bg-soft);
+  color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 24px;
+  font-weight: 800;
+  border: 1px solid var(--accent);
 }
 
-.paso{
-  background:white;
-  padding:20px;
-  border-radius:15px;
-  width:200px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.08);
-  font-weight:600;
-}
+.paso-card h4 { color: var(--primary); margin-bottom: 10px; font-size: 18px; }
+.paso-card p { font-size: 14px; color: #777; }
 
-/* CONFIANZA */
-.confianza{
-  text-align:center;
-  padding:40px 20px 60px;
-  font-size:14px;
+/* RESEÑAS */
+.opiniones { padding: 80px 20px; background: var(--bg-soft); text-align: center; }
+.grid-opiniones { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; margin-top: 40px; }
+.card-review {
+  background: white;
+  padding: 35px;
+  border-radius: 25px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
+.review-text { font-style: italic; color: #555; margin-bottom: 20px; font-size: 15px; }
+.review-author { font-weight: 700; color: var(--accent); font-size: 13px; letter-spacing: 1px; }
 
-/* BOTONES FLOTANTES */
-.float{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  z-index:9999;
+/* FLOTANTES */
+.float { position: fixed; right: 25px; bottom: 25px; display: flex; flex-direction: column; gap: 15px; z-index: 1000; }
+.float a {
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  transition: 0.3s;
 }
+.wa { background: #25D366; }
+.ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.float a:hover { transform: scale(1.1); }
 
-.float a{
-  color:white;
-  padding:14px 20px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  transition:0.2s;
-}
-
-.float a:hover{
-  transform:scale(1.08);
-}
-
-.wa{ background:#25D366; }
-.ig{ background:#ff6fa0; }
+footer { padding: 40px; text-align: center; font-size: 13px; opacity: 0.6; }
 
 </style>
 </head>
 
 <body>
 
+<div class="status-bar">
+    Miercoles a Domingo • 19:00 hs hasta agotar stock
+</div>
+
 <header>
   <div class="hero-box">
-    <img src="logo.png">
+    <img src="logo.png" alt="Sweet Bites">
     <h1>Sweet Bites</h1>
-    <div class="sub">🍰 Postres caseros que te salvan la noche</div>
-    <div class="hero-desc">Hechos en el día • Entregas en San Francisco</div>
+    <div class="sub">Postrería Artesanal</div>
   </div>
 </header>
 
 <div class="contenedor">
-
   <div class="producto">
-    <img src="chaja.jpg">
+    <img src="chaja.jpg" alt="Chajá">
     <h3>Chajá</h3>
-    <p>Bizcochuelo suave con crema, durazno y merengue.</p>
+    <p>El balance perfecto entre bizcochuelo nube, crema y merengue.</p>
     <div class="precio">$6000</div>
-    <a class="boton" target="_blank"
-    href="https://api.whatsapp.com/send?phone=5493564526084&text=Hola!%20Quiero%20pedir%20un%20Chajá">
-    Pedir
-    </a>
+    <a class="boton" target="_blank" href="https://wa.me/5493564526084?text=Hola!%20Quiero%20pedir%20un%20Chajá">Pedir ahora</a>
   </div>
 
   <div class="producto">
-    <img src="selva_negra.jpg">
+    <img src="selva_negra.jpg" alt="Selva Negra">
     <h3>Selva Negra</h3>
-    <p>Chocolate intenso con crema y cerezas.</p>
+    <p>Chocolate belga, nata montada y cerezas seleccionadas.</p>
     <div class="precio">$6000</div>
-    <a class="boton" target="_blank"
-    href="https://api.whatsapp.com/send?phone=5493564526084&text=Hola!%20Quiero%20pedir%20una%20Selva%20Negra">
-    Pedir
-    </a>
+    <a class="boton" target="_blank" href="https://wa.me/5493564526084?text=Hola!%20Quiero%20pedir%20una%20Selva%20Negra">Pedir ahora</a>
   </div>
 
   <div class="producto">
-    <img src="chocolina.jpg">
+    <img src="chocolina.jpg" alt="Chocolina">
     <h3>Chocolina</h3>
-    <p>Clásico argentino con crema dulce.</p>
+    <p>Nuestra versión premium del postre favorito de Argentina.</p>
     <div class="precio">$6000</div>
-    <a class="boton" target="_blank"
-    href="https://api.whatsapp.com/send?phone=5493564526084&text=Hola!%20Quiero%20pedir%20una%20Chocolina">
-    Pedir
-    </a>
+    <a class="boton" target="_blank" href="https://wa.me/5493564526084?text=Hola!%20Quiero%20pedir%20una%20Chocolina">Pedir ahora</a>
   </div>
 
   <div class="producto">
-    <img src="oreo.jpg">
+    <img src="oreo.jpg" alt="Postre Oreo">
     <h3>Postre Oreo</h3>
-    <p>Capas suaves de Oreo con crema.</p>
+    <p>Texturas de galleta y crema fría que se funden en tu boca.</p>
     <div class="precio">$6000</div>
-    <a class="boton" target="_blank"
-    href="https://api.whatsapp.com/send?phone=5493564526084&text=Hola!%20Quiero%20pedir%20un%20Postre%20Oreo">
-    Pedir
-    </a>
+    <a class="boton" target="_blank" href="https://wa.me/5493564526084?text=Hola!%20Quiero%20pedir%20un%20Postre%20Oreo">Pedir ahora</a>
   </div>
-
 </div>
 
-<section class="como">
-  <h2>¿Cómo pedir?</h2>
-  <div class="pasos">
-    <div class="paso">1️⃣ Elegís tu postre</div>
-    <div class="paso">2️⃣ Tocás el botón "Pedir"</div>
-    <div class="paso">3️⃣ Te lo llevamos 🍰</div>
+<section class="como-pedir">
+  <h2>El Arte de Pedir</h2>
+  <div class="pasos-container">
+    <div class="paso-card">
+      <div class="paso-icon">1</div>
+      <h4>Selección</h4>
+      <p>Explora nuestra carta del día y elige tu tentación favorita.</p>
+    </div>
+    <div class="paso-card">
+      <div class="paso-icon">2</div>
+      <h4>Contacto</h4>
+      <p>Envíanos un mensaje directo vía WhatsApp para confirmar stock.</p>
+    </div>
+    <div class="paso-card">
+      <div class="paso-icon">3</div>
+      <h4>Delivery</h4>
+      <p>Relájate, nosotros nos encargamos de llevar el postre a tu puerta.</p>
+    </div>
   </div>
 </section>
 
-<div class="confianza">
-  💖 Hechos con amor • Ingredientes reales • Stock limitado por día
-</div>
+<section class="opiniones">
+  <h2>Lo que dicen de nosotros</h2>
+  <div class="grid-opiniones">
+    <div class="card-review">
+      <p class="review-text">"La atención es impecable y los postres son realmente frescos. El Chajá es el mejor que probé en San Francisco."</p>
+      <p class="review-author">— VALENTINA R.</p>
+    </div>
+    <div class="card-review">
+      <p class="review-text">"Sabor equilibrado y presentación de primera. Ideal para cuando querés darte un gusto de verdad."</p>
+      <p class="review-author">— JUAN PABLO M.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+    <p>💖 Hecho con amor en San Francisco, Córdoba</p>
+    <p>© 2026 Sweet Bites | Todos los derechos reservados</p>
+</footer>
 
 <div class="float">
-  <a class="wa" 
-     href="https://api.whatsapp.com/send?phone=5493564526084&text=Hola!%20Quiero%20info%20de%20los%20postres" 
-     target="_blank">
-     Consultar WhatsApp
-  </a>
-
-  <a class="ig" 
-     href="https://www.instagram.com/sweetbites.sf/" 
-     target="_blank">
-     Consultar Instagram
-  </a>
+  <a class="wa" href="https://wa.me/5493564526084?text=Hola!%20Quiero%20consultar%20por%20un%20postre" target="_blank">WhatsApp</a>
+  <a class="ig" href="https://www.instagram.com/sweetbites.sf/" target="_blank">Instagram</a>
 </div>
 
 </body>
