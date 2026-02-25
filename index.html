@@ -364,9 +364,17 @@ function girarRuleta() {
   btn.disabled = true;
   btn.innerText = "¡GIRANDO...!";
   
-  const rand = Math.random() * 100;
-  let targetRotation = 0, mensaje = "", premio = "", gano = true;
+  const segmentos = 6;
+const gradosPorSegmento = 360 / segmentos;
 
+// ángulo final real
+const rotacionFinal = (3600 + targetRotation - 90) % 360;
+
+// calcular índice correcto
+let index = Math.floor((360 - rotacionFinal) / gradosPorSegmento) % segmentos;
+
+// premio real según donde cayó
+const premio = premios[index];
 if (rand <= 1) { 
   targetRotation = 240; // Postre Gratis
   premio = "¡POSTRE GRATIS! 🏆"; 
