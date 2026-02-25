@@ -398,7 +398,7 @@ else {
   mensaje = "Vuelve mañana."; 
   gano = false; 
 }
-  wheel.style.transform = `rotate(${3600 + targetRotation}deg)`;
+  wheel.style.transform = `rotate(${3600 + targetRotation - 90}deg)`;
   localStorage.setItem('sweetbites_last_spin', Date.now());
 
   setTimeout(() => {
