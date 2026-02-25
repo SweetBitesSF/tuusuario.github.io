@@ -367,13 +367,37 @@ function girarRuleta() {
   const rand = Math.random() * 100;
   let targetRotation = 0, mensaje = "", premio = "", gano = true;
 
-  if (rand <= 1) { targetRotation = 210; premio = "¡POSTRE GRATIS! 🏆"; mensaje = "Saca captura y canjéalo ya."; }
-  else if (rand <= 15) { targetRotation = 90; premio = "25% OFF ✨"; mensaje = "¡Increíble descuento!"; }
-  else if (rand <= 40) { targetRotation = 330; premio = "ENVÍO GRATIS 🛵"; mensaje = "Aprovecha el envío."; }
-  else if (rand <= 65) { targetRotation = 270; premio = "PROMO 2x1 🍰"; mensaje = "Doble porción hoy."; }
-  else if (rand <= 85) { targetRotation = 150; premio = "10% OFF 🎁"; mensaje = "Un regalo para vos."; }
-  else { targetRotation = 30; premio = "¡CASI! 😮"; mensaje = "Vuelve mañana."; gano = false; }
-
+if (rand <= 1) { 
+  targetRotation = 240; // Postre Gratis
+  premio = "¡POSTRE GRATIS! 🏆"; 
+  mensaje = "Saca captura y canjéalo ya."; 
+}
+else if (rand <= 15) { 
+  targetRotation = 120; // 25% OFF
+  premio = "25% OFF ✨"; 
+  mensaje = "¡Increíble descuento!"; 
+}
+else if (rand <= 40) { 
+  targetRotation = 0; // Envío Gratis
+  premio = "ENVÍO GRATIS 🛵"; 
+  mensaje = "Aprovecha el envío."; 
+}
+else if (rand <= 65) { 
+  targetRotation = 300; // 2x1
+  premio = "PROMO 2x1 🍰"; 
+  mensaje = "Doble porción hoy."; 
+}
+else if (rand <= 85) { 
+  targetRotation = 180; // 10% OFF
+  premio = "10% OFF 🎁"; 
+  mensaje = "Un regalo para vos."; 
+}
+else { 
+  targetRotation = 60; // Casi
+  premio = "¡CASI! 😮"; 
+  mensaje = "Vuelve mañana."; 
+  gano = false; 
+}
   wheel.style.transform = `rotate(${3600 + targetRotation}deg)`;
   localStorage.setItem('sweetbites_last_spin', Date.now());
 
